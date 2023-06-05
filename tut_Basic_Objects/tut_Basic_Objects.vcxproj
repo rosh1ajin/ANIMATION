@@ -132,6 +132,7 @@
     <ClInclude Include="Draw.h" />
     <ClInclude Include="Draw.hpp" />
     <ClInclude Include="Figure.h" />
+    <ClInclude Include="ufo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

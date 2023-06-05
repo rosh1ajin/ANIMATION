@@ -21,17 +21,155 @@ Figure f5 = { .0, 1.5 };
 Figure s = { .0, .0 };
 Figure s1 = { .0, -1.0 };
 Figure o = { .0, .0 };
+Figure o4 = { .0, .0 };
 Figure o2 = { .0, .0 };
 Figure o1 = { 0.4, -0.6 };
 Figure B = { .0, .0 };
-float SpeedY = 0.01f;
+float SpeedY = 0.0015f;
 float CoordY = 0.000001f;
-float SpeedX = 0.002f;
+float SpeedX = 0.0006f;
 float CoordX = 0.000001f;
 
 
 
+void drawUFO(float x, float y, float scale) {
+	glColor3f(0.5f, 0.5f, 0.5f); 
+	glLineWidth(2.0f);
+
+	glBegin(GL_POLYGON);
+	for (int i = 0; i < 360; i++) {
+		float angle = i * 3.1475 / 180.0f;
+		float x_pos = cos(angle) * 0.5f * scale + x;
+		float y_pos = sin(angle) * 0.2f * scale + y;
+		glVertex2f(x_pos, y_pos);
+	}
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	for (int i = 0; i < 360; i++) {
+		float angle = i * 3.1475 / 180.0f;
+		glColor3f(0.7f, 0.7f, 0.7f);
+		float x_pos = cos(angle) * 0.3f * scale + x;
+		float y_pos = sin(angle) * 0.1f * scale + y + 0.15f * scale;
+		glVertex2f(x_pos, y_pos);
+	}
+	glEnd();
+
+	glBegin(GL_POLYGON);
+	for (int i = 0; i < 360; i++) {
+		float angle = i * 3.1475 / 180.0f;
+		float x_pos = cos(angle) * 0.3f * scale + x;
+		float y_pos = sin(angle) * 0.1f * scale + y - 0.15f * scale;
+		glVertex2f(x_pos, y_pos);
+	}
+	glEnd();
+}
+
+
+
+void OknoUFO(float radius, float x, float y) {
+	const float PI = 3.14159265358979323846;
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(250, 177, 0);
+	glVertex2f(x, y);
+	for (int i = 0; i <= 360; i++) {
+		glVertex2f(x + (radius * cos(i * PI / 180.0)), y + (radius * sin(i * PI / 180.0)));
+	}
+	glEnd();
+}
+
+
+
+void Obladaet1() {
+	glColor3f(0.7, 0.7, 0.7);
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.8, 0.2); // лева€ верхн€€ точка
+	glVertex2f(-0.6, 0.4); // верхн€€ лева€ точка
+	glVertex2f(-0.4, 0.3); // верхн€€ права€ точка
+	glVertex2f(-0.2, 0.4); // права€ верхн€€ точка
+	glVertex2f(0.0, 0.3); // права€ средн€€ точка
+	glVertex2f(0.2, 0.4); // права€ нижн€€ точка
+	glVertex2f(0.4, 0.3); // нижн€€ права€ точка
+	glVertex2f(0.5, 0.1); // нижн€€ центральна€ точка
+	glVertex2f(0.4, -0.1); // нижн€€ лева€ точка
+	glVertex2f(0.2, -0.2); // лева€ нижн€€ точка
+	glVertex2f(0.0, -0.1); // лева€ средн€€ точка
+	glVertex2f(-0.2, -0.2); // лева€ верхн€€ точка
+	glEnd();
+	glFlush();
+}
+
+
+
+void Obladaet2() {
+	glColor3f(0.7, 0.7, 0.7);
+	glBegin(GL_POLYGON);
+	glVertex2f(0.0, -0.4);
+	glVertex2f(0.4, -0.45);
+	glVertex2f(0.4, -0.45);
+	glVertex2f(0.6, -0.53);
+	glVertex2f(0.3, -0.4);
+	glVertex2f(0.2, -0.3);
+	glEnd();
+	glFlush();
+}
+
+
+
+void Obladaet3() {
+	glColor3f(0.7, 0.7, 0.7);
+	glBegin(GL_POLYGON);
+	glVertex2f(-0.1, -0.4);
+	glVertex2f(-0.5, -0.45);
+	glVertex2f(-0.65, -0.35);
+	glVertex2f(-0.7, -0.53);
+	glVertex2f(-0.4, -0.4);
+	glVertex2f(-0.3, -0.3);
+	glEnd();
+	glFlush();
+}
+
+
+
+void Obladaet4() {
+	glColor3f(0.7, 0.7, 0.7);
+	glBegin(GL_POLYGON);
+	
+	glEnd();
+	glFlush();
+}
+
+
+
+void drawCloud() {
+	// настройка параметров облачка
+	glColor3f(1.0f, 1.0f, 1.0f); // цвет белый
+	glLineWidth(3.0f); // толщина линии 3 пиксел€
+
+	// нарисовать круги и эллипсы дл€ создани€ формы облачка
+	glBegin(GL_POLYGON);
+	glVertex2f(0.0f, 0.0f);
+	glVertex2f(0.5f, 0.5f);
+	glVertex2f(1.0f, 0.0f);
+	glVertex2f(0.5f, -0.5f);
+	glEnd();
+}
+
+
 void drawSun(float radius, float x, float y) {
+		const float PI = 3.14159265358979323846;
+		glBegin(GL_TRIANGLE_FAN);
+		glColor3ub(222, 177, 0);
+		glVertex2f(x, y);
+		for (int i = 0; i <= 360; i++) {
+			glVertex2f(x + (radius * cos(i * PI / 180.0)), y + (radius * sin(i * PI / 180.0)));
+		}
+		glEnd();
+	}
+
+
+
+void drawSunMoon(float radius, float x, float y) {
 	const float PI = 3.14159265358979323846;
 	glBegin(GL_TRIANGLE_FAN);
 	glColor3ub(222, 177, 0);
@@ -83,6 +221,20 @@ void drawMoon(float radius, float x, float y) {
 
 
 
+void drawMoonland(float radius, float x, float y) {
+	const float PI = 3.14159265358979323846;
+	glBegin(GL_TRIANGLE_FAN);
+	glColor3ub(155, 155, 155);
+	glVertex2f(x, y);
+	for (int i = 0; i <= 360; i++) {
+		glVertex2f(x + (radius * cos(i * PI / 180.0)), y + (radius * sin(i * PI / 180.0)));
+	}
+
+	glEnd();
+}
+
+
+
 float randFloat() {
 	return (float)rand() / RAND_MAX;
 }
@@ -111,6 +263,8 @@ void stars() {
 
 
 void FirstBackground() {
+
+
 
 	glColor3ub(18, 143, 196);
 	glBegin(GL_QUADS); // небо
@@ -233,17 +387,6 @@ void FirstBackground() {
 	glVertex2f(0.75, -0.3);
 	glVertex2f(0.75, -0.5);
 	glEnd();
-
-
-
-
-
-
-
-	glEnd();
-
-
-
 }
 
 
@@ -261,6 +404,10 @@ void SecondBackground() {
 	glColor3ub(18, 143, 196);
 	glVertex2f(-2, -2);
 	glEnd();
+	Obladaet1();
+	Obladaet2();
+	Obladaet3();
+	Obladaet4();
 	glPopMatrix();
 
 }
@@ -352,7 +499,7 @@ void drawAnima() {
 	if (f.pos.y > 2) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		SecondBackground();
-		Oblako(o);
+		
 		f2.pos.y += SpeedY;
 		DrawSpaceboard(f2);
 		if (f2.pos.y > 2) {
@@ -363,39 +510,54 @@ void drawAnima() {
 			DrawSpaceboard(f3);
 			if (f3.pos.y > 2) {
 				FourthBackground();
-				stars();
-				drawMoon(0.4, 1, 1);
-				drawKrater(0.02, 0.95, 0.86);
-				drawKrater(0.02, 0.86, 0.90);
-				drawKrater(0.02, 0.8, 0.88);
-				drawKrater(0.02, 0.75, 0.75);
-				drawKrater(0.02, 0.7, 0.95);
 				f4.pos.y += SpeedY;
-				f4.pos.x += SpeedX;
 				DrawSpaceboard(f4);
-				if (f4.pos.y > 2) {
-					FifthBackground();
-					drawEarth(0.3, 1, 0.8);
-					drawSun(0.2, -1, 1);
-					drawKrater(0.05, -0.8, -0.8);
-					drawKrater(0.05, 0.6, -0.7);
-					drawKrater(0.06, -0.6, -0.7);
-					drawKrater(0.06, 0.6, -0.7);
-					drawKrater(0.04, -0.25, -0.9);
-					drawKrater(0.04, 0.3, -0.6);
-					stars();
-					glPushMatrix();
-						if (f5.pos.y > 0)
-							f5.pos.y -= SpeedY;
-							glPopMatrix();
-							DrawSpaceboard(f5);
-				}
+				{
+					if (f3.pos.y > 2) {
+						FourthBackground();
+						stars();
+						drawEarth(0.3, -1, -0.8);
+						drawMoon(0.4, 1, 1);
+						drawKrater(0.02, 0.95, 0.86);
+						drawKrater(0.02, 0.86, 0.90);
+						drawKrater(0.02, 0.8, 0.88);
+						drawKrater(0.02, 0.75, 0.75);
+						drawKrater(0.02, 0.7, 0.95);
+						f4.pos.y += SpeedY;
+						f4.pos.x += SpeedX;
+						DrawSpaceboard(f4);
+					}
+					if (f4.pos.y > 2) {
+						glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+						drawMoonland(1.95, 0, -2.3);
+						drawUFO(0.0f, 0.0f, 1.0f);
+						OknoUFO(0.06, 0, 0.125);
+						OknoUFO(0.045, -0.17, 0.15);
+						OknoUFO(0.045, 0.17, 0.15);
+						OknoUFO(0.06, 0, -0.125);
+						OknoUFO(0.045, -0.17, -0.15);
+						OknoUFO(0.045, 0.17, -0.15);
+						drawEarth(0.3, 1, 0.8);
+						drawSunMoon(0.2, -1, 1);
+						drawKrater(0.05, -0.8, -0.8);
+						drawKrater(0.05, 0.6, -0.7);
+						drawKrater(0.06, -0.6, -0.7);
+						drawKrater(0.06, 0.6, -0.7);
+						drawKrater(0.04, -0.25, -0.9);
+						drawKrater(0.04, 0.3, -0.6);
+						stars();
+						glPushMatrix();
+							if (f5.pos.y > 0)
+								f5.pos.y -= SpeedY;
+								glPopMatrix();
+								DrawSpaceboard(f5);
+					}
 
+				}
 			}
 		}
 	}
 }
-
 
 
 int main(int argc, char* argv[]) {

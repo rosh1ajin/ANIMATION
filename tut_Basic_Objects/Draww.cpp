@@ -3,6 +3,8 @@
 #include "Figure.h"
 #include "GL/freeglut.h"
 #include <cmath>
+#define _USE_MATH_DEFINES
+
 
 
 

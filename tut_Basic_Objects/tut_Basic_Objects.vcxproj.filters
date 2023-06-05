@@ -32,5 +32,8 @@
     <ClInclude Include="Draw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ufo.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
