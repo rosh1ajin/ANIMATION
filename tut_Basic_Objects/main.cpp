@@ -32,6 +32,260 @@ float CoordX = 0.000001f;
 
 
 
+void DrawSpace(Figure& f) { //Корабль
+	glPushMatrix();
+	glRotatef(-35.0f, 0.0f, 0.0f, 1.0f);
+	glTranslatef(f.pos.x, f.pos.y, 0);
+
+	glBegin(GL_QUADS);
+	glColor3f(1.0f, 0.5f, 0.0f);
+	glVertex2f(0.06, -0.3); //1(PrVe)//Ground
+	glVertex2f(0.06, -0.9); //2(PrNi)
+	glVertex2f(-0.06, -0.9); //3(LeNi)
+	glVertex2f(-0.06, -0.3); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.0f, 0.0f, 0.0f);
+	glVertex2f(-0.06, -0.9);//LvN (X Y)
+	glVertex2f(0.0, -0.93);//Top
+	glVertex2f(0.06, -0.9);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.0f, 0.0f, 0.0f);
+	glVertex2f(-0.05, -0.97);//LvN (X Y)
+	glVertex2f(0.0, -0.9);//Top
+	glVertex2f(0.05, -0.97);//PrN
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(1.0f, 0.5f, 0.0f);
+	glVertex2f(0.03, -0.3); //1(PrVe)//Ground
+	glVertex2f(0.03, -0.9); //2(PrNi)
+	glVertex2f(-0.03, -0.9); //3(LeNi)
+	glVertex2f(-0.03, -0.3); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(1.0f, 0.6f, 0.0f);
+	glVertex2f(0.025, -0.3); //1(PrVe)//Ground
+	glVertex2f(0.025, -0.9); //2(PrNi)
+	glVertex2f(-0.025, -0.9); //3(LeNi)
+	glVertex2f(-0.025, -0.3); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(1.0f, 0.65f, 0.0f);
+	glVertex2f(0.01, -0.3); //1(PrVe)//Ground
+	glVertex2f(0.01, -0.9); //2(PrNi)
+	glVertex2f(-0.01, -0.9); //3(LeNi)
+	glVertex2f(-0.01, -0.3); //4(LeVe)
+	glEnd();
+
+	//prav
+	glBegin(GL_QUADS);
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex2f(0.12, -0.4); //1(PrVe)//Ground
+	glVertex2f(0.12, -1); //2(PrNi)
+	glVertex2f(0.06, -1); //3(LeNi)
+	glVertex2f(0.06, -0.4); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.7f, 0.7f, 0.7f);
+	glVertex2f(0.11, -0.4); //1(PrVe)//Ground
+	glVertex2f(0.11, -1); //2(PrNi)
+	glVertex2f(0.07, -1); //3(LeNi)
+	glVertex2f(0.07, -0.4); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.6f, 0.6f, 0.6f);
+	glVertex2f(0.1, -0.3); //1(PrVe)//Ground
+	glVertex2f(0.1, -1); //2(PrNi)
+	glVertex2f(0.08, -1); //3(LeNi)
+	glVertex2f(0.08, -0.3); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.4f, 0.4f, 0.4f);
+	glVertex2f(0.11, -0.9); //1(PrVe)//Ground
+	glVertex2f(0.12, -1); //2(PrNi)
+	glVertex2f(0.06, -1); //3(LeNi)
+	glVertex2f(0.07, -0.9); //4(LeVe)
+	glEnd();
+
+	//lev
+	glBegin(GL_QUADS);
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glVertex2f(-0.06, -0.4); //1(PrVe)//Ground
+	glVertex2f(-0.06, -1); //2(PrNi)
+	glVertex2f(-0.12, -1); //3(LeNi)
+	glVertex2f(-0.12, -0.4); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.7f, 0.7f, 0.7f);
+	glVertex2f(-0.07, -0.4); //1(PrVe)//Ground
+	glVertex2f(-0.07, -1); //2(PrNi)
+	glVertex2f(-0.11, -1); //3(LeNi)
+	glVertex2f(-0.11, -0.4); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.6f, 0.6f, 0.6f);
+	glVertex2f(-0.1, -0.3); //1(PrVe)//Ground
+	glVertex2f(-0.1, -1); //2(PrNi)
+	glVertex2f(-0.08, -1); //3(LeNi)
+	glVertex2f(-0.08, -0.3); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_QUADS);
+	glColor3f(0.4f, 0.4f, 0.4f);
+	glVertex2f(-0.11, -0.9); //1(PrVe)//Ground
+	glVertex2f(-0.12, -1); //2(PrNi)
+	glVertex2f(-0.06, -1); //3(LeNi)
+	glVertex2f(-0.07, -0.9); //4(LeVe)
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(1.0f, 0.5f, 0.0f);
+	glVertex2f(-0.06, -0.3);//LvN (X Y)
+	glVertex2f(0.0, 0.0);//Top
+	glVertex2f(0.06, -0.3);//PrN
+	glEnd();
+	//kprav
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.7f, 0.7f);
+	glVertex2f(0.06, -0.4);//LvN (X Y)
+	glVertex2f(0.087, -0.2);//Top
+	glVertex2f(0.12, -0.4);//PrN
+	glEnd();
+	//klev
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.7f, 0.7f);
+	glVertex2f(-0.12, -0.4);//LvN (X Y)
+	glVertex2f(-0.087, -0.2);//Top
+	glVertex2f(-0.06, -0.4);//PrN
+	glEnd();
+	//
+	glBegin(GL_TRIANGLES);
+	glColor3f(1.0f, 0.2f, 0.2f);
+	glVertex2f(-0.06, -1.12);//LvN (X Y)
+	glVertex2f(-0.087, -1);//Top
+	glVertex2f(-0.12, -1.12);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(1.0f, 0.2f, 0.2f);
+	glVertex2f(0.06, -1.12);//LvN (X Y)
+	glVertex2f(0.087, -1);//Top
+	glVertex2f(0.12, -1.12);//PrN
+	glEnd();
+	////fire left
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(-0.07, -1.1);//LvN (X Y)
+	glVertex2f(-0.06, -1);//Top
+	glVertex2f(-0.05, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(-0.08, -1.1);//LvN (X Y)
+	glVertex2f(-0.07, -1);//Top
+	glVertex2f(-0.06, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(-0.09, -1.1);//LvN (X Y)
+	glVertex2f(-0.08, -1);//Top
+	glVertex2f(-0.07, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(-0.1, -1.1);//LvN (X Y)
+	glVertex2f(-0.09, -1);//Top
+	glVertex2f(-0.08, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(-0.11, -1.1);//LvN (X Y)
+	glVertex2f(-0.1, -1);//Top
+	glVertex2f(-0.09, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(-0.12, -1.1);//LvN (X Y)
+	glVertex2f(-0.11, -1);//Top
+	glVertex2f(-0.1, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(-0.13, -1.1);//LvN (X Y)
+	glVertex2f(-0.12, -1);//Top
+	glVertex2f(-0.11, -1.1);//PrN
+	glEnd();
+	//fire right
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(0.07, -1.1);//LvN (X Y)
+	glVertex2f(0.06, -1);//Top
+	glVertex2f(0.05, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(0.08, -1.1);//LvN (X Y)
+	glVertex2f(0.07, -1);//Top
+	glVertex2f(0.06, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(0.09, -1.1);//LvN (X Y)
+	glVertex2f(0.08, -1);//Top
+	glVertex2f(0.07, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(0.1, -1.1);//LvN (X Y)
+	glVertex2f(0.09, -1);//Top
+	glVertex2f(0.08, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(0.11, -1.1);//LvN (X Y)
+	glVertex2f(0.1, -1);//Top
+	glVertex2f(0.09, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(0.12, -1.1);//LvN (X Y)
+	glVertex2f(0.11, -1);//Top
+	glVertex2f(0.1, -1.1);//PrN
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.7f, 0.5f, 0.0f);
+	glVertex2f(0.13, -1.1);//LvN (X Y)
+	glVertex2f(0.12, -1);//Top
+	glVertex2f(0.11, -1.1);//PrN
+	glEnd();
+	glPopMatrix();
+}
+
+
+
 void drawUFO(float x, float y, float scale) {
 	glColor3f(0.5f, 0.5f, 0.5f); 
 	glLineWidth(2.0f);
@@ -499,7 +753,6 @@ void drawAnima() {
 	if (f.pos.y > 2) {
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		SecondBackground();
-		
 		f2.pos.y += SpeedY;
 		DrawSpaceboard(f2);
 		if (f2.pos.y > 2) {
@@ -507,11 +760,11 @@ void drawAnima() {
 			ThirdBackground();
 			stars();
 			f3.pos.y += SpeedY;
-			DrawSpaceboard(f3);
+			DrawSpace(f3);
 			if (f3.pos.y > 2) {
 				FourthBackground();
 				f4.pos.y += SpeedY;
-				DrawSpaceboard(f4);
+				DrawSpace(f4);
 				{
 					if (f3.pos.y > 2) {
 						FourthBackground();
@@ -525,7 +778,7 @@ void drawAnima() {
 						drawKrater(0.02, 0.7, 0.95);
 						f4.pos.y += SpeedY;
 						f4.pos.x += SpeedX;
-						DrawSpaceboard(f4);
+						DrawSpace(f4);
 					}
 					if (f4.pos.y > 2) {
 						glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

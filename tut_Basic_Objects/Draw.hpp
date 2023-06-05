@@ -8,6 +8,7 @@
 
 void renderScene(void);
 void DrawSpaceboard(Figure& f);
+void DrawSpaceboardN(Figure& f);
 void Oblako(Figure& o);
 void animate(int value);
 void drawAnima();
